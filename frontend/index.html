@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .container{
+            padding-top:70px;
+        }
+    </style>
+</head>
+<body>
+   
+     <div class="container" id="app">
+        <div class="row">
+            <div class="col-sm">
+            <div class="">
+                <h2 class="mb-3">Network Interface</h2>
+        <div v-for="(item, index) in datas" class="mb-3">
+      <div  class="card border-0 shadow" >
+       <div class="card-body">
+         <h5 class="card-title" v-text="item.int"></h5>
+         <div v-for="(item, index) in item.inf" >
+            <h6 class="card-subtitle mb-2 text-muted" v-text="item.family"></h6>
+            <ul>
+                <li>Address : {{item.address}}</li>
+                <li>CIDR : {{item.cidr}}</li>
+                <li>Netmask : {{item.netmask}}</li>
+                <li>MAC : {{item.mac}}</li>
+            </ul>
+         </div>
+         
+       </div>
+     </div>
+    </div>
+</div>
+            </div>
+            <div class="col-sm">
+              One of three columns
+            </div>
+            <div class="col-sm">
+              One of three columns
+            </div>
+          </div>
+
+
+
+    </div>
+  <script src="vue.js"></script>
+  <script src="script.js"></script>
+  <script src="bootstrap.min.js"></script>
+  
+</body>
+</html>
