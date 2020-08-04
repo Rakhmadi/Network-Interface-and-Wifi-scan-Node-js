@@ -9,13 +9,17 @@
         .container{
             padding-top:70px;
         }
+        .scr{
+          height: 90vh;
+          overflow-y: scroll;
+        }
     </style>
 </head>
 <body>
    
      <div class="container" id="app">
         <div class="row">
-            <div class="col-sm">
+            <div class="col-sm scr">
             <div class="">
                 <h2 class="mb-3">Network Interface</h2>
         <div v-for="(item, index) in datas" class="mb-3">
@@ -29,6 +33,7 @@
                 <li>CIDR : {{item.cidr}}</li>
                 <li>Netmask : {{item.netmask}}</li>
                 <li>MAC : {{item.mac}}</li>
+                
             </ul>
          </div>
          
@@ -37,8 +42,25 @@
     </div>
 </div>
             </div>
-            <div class="col-sm">
-              One of three columns
+            <div class="col-sm scr">
+              <div class="">
+                <h2 class="mb-3">WiFi Scan</h2>
+        <div v-for="(item, index) in wifi" class="mb-3">
+      <div  class="card border-0 shadow" >
+       <div class="card-body">
+         <h5 class="card-title" v-text="item.ssid"></h5>
+        
+            <h6 class="card-subtitle mb-2 text-muted" >Info</h6>
+            <ul>
+                <li>SSID : {{item.ssid}}</li>
+                <li>MAC : {{item.mac}}</li>
+                <li>RSSI : {{item.rssi}}</li>
+                <li>CHANNEL : {{item.channel}}</li>
+            </ul>
+       </div>
+     </div>
+    </div>
+</div>
             </div>
             <div class="col-sm">
               One of three columns
